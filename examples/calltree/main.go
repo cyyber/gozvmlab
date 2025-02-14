@@ -40,7 +40,7 @@ type dumbTracer struct {
 	counter uint64
 }
 
-func (d *dumbTracer) CaptureStart(env *vm.EVM, from common.Address, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
+func (d *dumbTracer) CaptureStart(env *vm.ZVM, from common.Address, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
 	fmt.Printf("captureStart\n")
 	fmt.Printf("	from: %v\n", from.Hex())
 	fmt.Printf("	to: %v\n", to.Hex())
@@ -141,7 +141,7 @@ func runit() error {
 		ChainConfig: &params.ChainConfig{
 			ChainID: big.NewInt(1),
 		},
-		EVMConfig: vmConf,
+		ZVMConfig: vmConf,
 	}
 	// Diagnose it
 	t0 := time.Now()

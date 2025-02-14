@@ -105,14 +105,14 @@ func runit() error {
 		ChainConfig: &params.ChainConfig{
 			ChainID: big.NewInt(1),
 		},
-		EVMConfig: vm.Config{
+		ZVMConfig: vm.Config{
 			Tracer: &common2.PrintingTracer{},
 		},
 	}
 	// Run with tracing
 	_, _, _ = runtime.Call(aAddr, nil, &runtimeConfig)
 	// Diagnose it
-	runtimeConfig.EVMConfig = vm.Config{}
+	runtimeConfig.ZVMConfig = vm.Config{}
 	t0 := time.Now()
 	_, _, err = runtime.Call(aAddr, nil, &runtimeConfig)
 	t1 := time.Since(t0)

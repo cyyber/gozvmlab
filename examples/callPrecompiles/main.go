@@ -110,7 +110,7 @@ func runit() error {
 		ChainConfig: &params.ChainConfig{
 			ChainID: big.NewInt(1),
 		},
-		EVMConfig: vm.Config{
+		ZVMConfig: vm.Config{
 			Tracer: &dumbTracer{},
 		},
 	}
@@ -142,7 +142,7 @@ func (d *dumbTracer) CaptureState(pc uint64, op vm.OpCode, gas, cost uint64, sco
 	}
 }
 
-func (d *dumbTracer) CaptureStart(env *vm.EVM, from common.Address, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
+func (d *dumbTracer) CaptureStart(env *vm.ZVM, from common.Address, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
 	fmt.Printf("captureStart\n")
 	fmt.Printf("	from: %v\n", from.Hex())
 	fmt.Printf("	to: %v\n", to.Hex())

@@ -35,7 +35,7 @@ type BasicTracer struct{}
 
 func (n *BasicTracer) CaptureTxStart(uint64) {}
 func (n *BasicTracer) CaptureTxEnd(uint64)   {}
-func (n *BasicTracer) CaptureStart(*vm.EVM, common.Address, common.Address, bool, []byte, uint64, *big.Int) {
+func (n *BasicTracer) CaptureStart(*vm.ZVM, common.Address, common.Address, bool, []byte, uint64, *big.Int) {
 }
 func (n *BasicTracer) CaptureEnd([]byte, uint64, error) {}
 func (n *BasicTracer) CaptureEnter(vm.OpCode, common.Address, common.Address, []byte, uint64, *big.Int) {

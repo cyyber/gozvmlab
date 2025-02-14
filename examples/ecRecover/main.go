@@ -108,7 +108,7 @@ func runit() error {
 		GasLimit:    gas,
 		BlockNumber: new(big.Int).SetUint64(1),
 		ChainConfig: ruleset,
-		EVMConfig: vm.Config{
+		ZVMConfig: vm.Config{
 			Tracer: logger.NewJSONLogger(nil, os.Stderr),
 		},
 	}

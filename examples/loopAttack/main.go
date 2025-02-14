@@ -190,14 +190,14 @@ Fork: %v
 		GasLimit:    gas,
 		BlockNumber: new(big.Int).SetUint64(1),
 		ChainConfig: ruleset,
-		EVMConfig: vm.Config{
+		ZVMConfig: vm.Config{
 			Tracer: tracer,
 		},
 	}
 	// Run with tracing
 	_, _, _ = runtime.Call(attackerAddr, nil, &runtimeConfig)
 	// Diagnose it
-	runtimeConfig.EVMConfig = vm.Config{}
+	runtimeConfig.ZVMConfig = vm.Config{}
 	t0 := time.Now()
 	_, _, err = runtime.Call(attackerAddr, nil, &runtimeConfig)
 	t1 := time.Since(t0)

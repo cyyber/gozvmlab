@@ -57,7 +57,7 @@ func NewGstMaker() *GstMaker {
 		env: &stEnv{
 			// The ENV portion
 			Number:    1,
-			GasLimit:  0x26e1f476fe1e22,
+			GasLimit:  0x1312d00,
 			Random:    &rnd,
 			Coinbase:  coinbase,
 			Timestamp: 0x03e8,

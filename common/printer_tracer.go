@@ -35,7 +35,7 @@ type PrintingTracer struct {
 	BasicTracer
 }
 
-func (n *PrintingTracer) CaptureStart(vm *vm.EVM, from, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
+func (n *PrintingTracer) CaptureStart(vm *vm.ZVM, from, to common.Address, create bool, input []byte, gas uint64, value *big.Int) {
 	fmt.Printf("Start: from %x to %x, value: %#x\n", from, to, value)
 }
 func (n *PrintingTracer) CaptureState(pc uint64, op vm.OpCode, gas uint64, cost uint64, scope *vm.ScopeContext, input []byte, depth int, err error) {
